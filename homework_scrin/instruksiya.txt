@@ -1,0 +1,1 @@
+Api yaratishda: model serializer view. Qoganiga registor
