@@ -7,13 +7,14 @@ class ArtistSerializer(serializers.ModelSerializer):
         fields = ('name', 'image', 'last_update')
 
 class AlbomSerializer(serializers.ModelSerializer):
-    artist = ArtistSerializer()
+    artist = ArtistSerializer(read_only = True)
     class Meta:
         model = Albom
         fields = ('title', 'cover', 'artist','last_update')
 
 class SongSerializer(serializers.ModelSerializer):
-    albom = AlbomSerializer()
+    albom = AlbomSerializer(read_only = True)
     class Meta:
         model = Song
-        fields = ('title', 'songs', 'albom', 'last_update')
+        fields = ('title', 'song', 'albom', 'last_update')
+
